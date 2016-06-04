@@ -5,9 +5,7 @@ class Person
   def initialize(name)
     @name = name
 
-    name=gets.chomp
-
-    puts "Hi! my name is #{@name}"
+    puts "Hi! my name is #{@name}!"
 
   end
 
@@ -20,11 +18,26 @@ class Instructor < Person
 
   end
 
-  class Student < Person
+end
+
+class Student < Person
       def learn
         "I get it!"
 
       end
 
+end
+
+
 chris = Instructor.new("Chris")
 cristina = Student.new("Cristina")
+
+# call teach method for Instructor class
+puts chris.teach
+
+# call learn method for Student class
+puts cristina.learn
+
+#call teach method for student class
+puts cristina.teach
+# calling method from outside its own class result in undefined method. (NoMethodError)
